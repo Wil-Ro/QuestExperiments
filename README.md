@@ -1,39 +1,14 @@
-# Godot Oculus Mobile GDNative module
-This module is provided as is, all files are contained within the addons/godot-ovrmobile folder
+# Quest Experiments
 
-This module requires **Godot 3.2 or newer** to run.
 
-This module adds support for running Godot VR games on Oculus Quest devices.
-For other VR devices please see other plugins that have been made available 
+![image](banner.png)
 
-Source code for this module can be found here:
-https://github.com/GodotVR/godot_oculus_mobile
-Additional documentation is also located within that repository.
+## What is this?
+Whilst I'm at university I have a Quest 2 and a low powered laptop. My aim is to see what the best thing I can make for the Quest is with this limited setup. I'm using Godot for this as its absolutely tiny and hopefully quite easy for my laptop to run.
 
-Also note that we have a support asset containing a number of useful scenes to get you going building VR applications in Godot:
-https://github.com/GodotVR/godot-vr-common
+I'm not sure what this file will actually contain yet but most likely a collection of interactable objects in a small vr world.
 
-GLES2
------
-It is highly recommended to use the GLES2 renderer available in Godot when targetting these devices. 
+## Set up
+To use this file you will need to download Android Studio, NDK and a few other things, you can find the exact instructions I followed [here](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html#doc-exporting-for-android), the file should come with the Godot Oculus library but if you need it for any reason you can find it [here](https://github.com/GodotVR/godot-oculus-mobile-asset).
 
-Using the main viewport
------------------------
-The ARVR server module requires a viewport to be configured as the ARVR viewport. If you chose to use the main viewport an aspect ratio corrected copy of the left eye will be rendered to the viewport automatically.
-
-You will need to add the following code to a script on your root node:
-
-```
-var interface = ARVRServer.find_interface("OVRMobile")
-if interface and interface.initialize()
-	# Tell our viewport it is the arvr viewport:
-	get_viewport().arvr = true
-
-	# change our physics fps
-	Engine.iterations_per_second = 72 # Quest
-```
-
-Licensing
----------
-The Godot Oculus Mobile module and the godot scenes in this add on are all supplied under an MIT License.
-The Oculus client software are copyright Oculus, please check http://oculus.com for license information.
+If you want to use the file on a Quest you will need to compile it and add it to your device, you may need a developer account for this.
